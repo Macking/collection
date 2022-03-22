@@ -18,7 +18,7 @@ func defaultDbConfig(cfg *DBConfig) *DBConfig {
 		newCfg.MaxOpenConnections = 20
 	}
 
-	newCfg.DSN = "root:61273466@tcp(192.168.0.64:3306)/gutenberg"
+	newCfg.DSN = "root:root@tcp(192.168.0.1:3306)/dbname"
 
 	return &newCfg
 }
