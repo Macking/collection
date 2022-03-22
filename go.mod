@@ -3,14 +3,21 @@ module github.com/Macking/collection
 go 1.18
 
 require (
+	github.com/gorilla/mux v1.8.0
+	github.com/klauspost/compress v1.15.1
 	github.com/spf13/cobra v1.4.0
 	github.com/spf13/viper v1.10.1
+	gorm.io/driver/mysql v1.3.2
+	gorm.io/gorm v1.23.3
 )
 
 require (
 	github.com/fsnotify/fsnotify v1.5.1 // indirect
+	github.com/go-sql-driver/mysql v1.6.0 // indirect
 	github.com/hashicorp/hcl v1.0.0 // indirect
 	github.com/inconshreveable/mousetrap v1.0.0 // indirect
+	github.com/jinzhu/inflection v1.0.0 // indirect
+	github.com/jinzhu/now v1.1.4 // indirect
 	github.com/magiconair/properties v1.8.5 // indirect
 	github.com/mitchellh/mapstructure v1.4.3 // indirect
 	github.com/pelletier/go-toml v1.9.4 // indirect

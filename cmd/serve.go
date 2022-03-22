@@ -4,6 +4,7 @@ package cmd
 
 import (
 	"fmt"
+	"github.com/Macking/collection/internal/dbcore"
 
 	"github.com/spf13/cobra"
 )
@@ -18,12 +19,19 @@ and usage of using your command. For example:
 Cobra is a CLI library for Go that empowers applications.
 This application is a tool to generate the needed files
 to quickly create a Cobra application.`,
+	PersistentPreRunE: func(cmd *cobra.Command, args []string) error {
+		config := DefaultConfig()
+		dbcore.Connect(&config.DBConfig)
+		return nil
+	},
 	Run: func(cmd *cobra.Command, args []string) {
 		fmt.Println("serve called")
+		serverMain()
 	},
 }
 
 func init() {
+
 	rootCmd.AddCommand(serveCmd)
 
 	// Here you will define your flags and configuration settings.
