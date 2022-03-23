@@ -25,5 +25,6 @@ func registerMinioRouter(router *mux.Router, enableConfigOps bool) {
 	minioRouter.Methods(http.MethodPost).Path("/upload").
 		HandlerFunc(minioAPI.MinioUploadFileHandler).
 		Queries("bucket", "{bucket:.*}").
-		Queries("key", "{key:.*}").Queries("path", "{path:.*}")
+		Queries("key", "{key:.*}").
+		Queries("path", "{path:.*}")
 }

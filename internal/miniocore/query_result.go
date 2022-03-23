@@ -1,4 +1,4 @@
-package minio
+package miniocore
 
 type ResultMessage struct {
 	MD5    string `json:"md5,omitempty"`

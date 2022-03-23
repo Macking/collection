@@ -3,6 +3,7 @@ package cmd
 import (
 	"context"
 	"github.com/Macking/collection/internal/dbcore"
+	"github.com/Macking/collection/internal/miniocore"
 	"sync"
 )
 
@@ -13,6 +14,7 @@ type ctxKeyWaitGroup struct{}
 type Config struct {
 	AppName string
 	dbcore.DBConfig
+	miniocore.MinioConfig
 	Ctx    context.Context
 	Cancel context.CancelFunc
 }
@@ -26,5 +28,6 @@ func DefaultConfig() *Config {
 		DBConfig: dbcore.DBConfig{
 			AutoMigrate: true,
 		},
+		MinioConfig: miniocore.MinioConfig{},
 	}
 }

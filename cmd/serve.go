@@ -5,6 +5,7 @@ package cmd
 import (
 	"fmt"
 	"github.com/Macking/collection/internal/dbcore"
+	"github.com/Macking/collection/internal/miniocore"
 
 	"github.com/spf13/cobra"
 )
@@ -22,6 +23,7 @@ to quickly create a Cobra application.`,
 	PersistentPreRunE: func(cmd *cobra.Command, args []string) error {
 		config := DefaultConfig()
 		dbcore.Connect(&config.DBConfig)
+		miniocore.Connect(&config.MinioConfig)
 		return nil
 	},
 	Run: func(cmd *cobra.Command, args []string) {
